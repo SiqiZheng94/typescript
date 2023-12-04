@@ -75,7 +75,7 @@ function App() {
     });
 
 
-    const age=10;
+ const age=10;
  const score=0;
  const username : string ="";
  const isAdmin=false;
