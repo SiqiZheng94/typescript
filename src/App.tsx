@@ -65,7 +65,7 @@ function App() {
             }}
     ]
     const livingHumans=characters.filter(character=>
-        character.species==="Human"&&character.status==="Alive");
+        character.species==="Human" && character.status==="Alive");
 
     const specialObject=characters.map(character=>{
         return {
@@ -132,6 +132,8 @@ function App() {
      console.log("isAdmin is false.");
  }
 
+
+
  //Christmas Tree
  function generateChristmasTree(n:number) {
     let result = "";
@@ -170,7 +172,7 @@ function App() {
 
 
 
-        <p>{JSON.stringify(livingHumans)}</p>
+        {/*<p>{JSON.stringify(livingHumans)}</p>*/}
 
         <ul>
             {livingHumans.map(character=>(
@@ -179,11 +181,11 @@ function App() {
         </ul>
 
 
-        <p>{JSON.stringify(specialObject)}</p>
+        {/*<p>{JSON.stringify(specialObject)}</p>*/}
 
         <div>
-            {specialObject.map((specialObject, index) => (
-                <p key={index}>{JSON.stringify(specialObject)}</p>
+            {specialObject.map((specialObject) => (
+                <p>{JSON.stringify(specialObject)}</p>
             ))}
         </div>
 
