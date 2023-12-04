@@ -79,7 +79,6 @@ function App() {
  const score=0;
  const username : string ="";
  const isAdmin=false;
- const n : number =5;
  const numbers = [1,2,3,4,5,6,7,8,9,10,11];
  const doupleNumbers=numbers.map(num=>num*2);
  const words = ["a","ab","abc","abcd","abcde","abcdef","abcdefg"];
@@ -133,17 +132,29 @@ function App() {
      console.log("isAdmin is false.");
  }
 
- for(let i:number=1; i<=n; i++){
-     const space=" ".repeat(n-i);
-     const star="*".repeat(i*2-1);
-     console.log(space+star+space);
+ //Christmas Tree
+ function generateChristmasTree(n:number) {
+    let result = "";
+        for (let i: number = 1; i <= n; i++) {
+            const space = " ".repeat(n - i);
+            const star = "*".repeat(i * 2 - 1);
+            console.log(space + star + space);
+            result = result + space + star + space + '\n';
+        }
+        for (let i: number = 1; i <= n; i++) {
+            // let space=" ".repeat(n-1);
+            // let star="*";
+            // console.log(space+star);
+            console.log(' '.repeat(n - 1) + '*');
+            result = result + ''.repeat(n - 1) + '*'+'\n';
+        }
+        return <pre>{result}</pre>;
  }
- for(let i:number=1; i<=n; i++){
-     // let space=" ".repeat(n-1);
-     // let star="*";
-     // console.log(space+star);
-     console.log(' '.repeat(n - 1) + '*');
- }
+    const n : number =5;
+    const tree=generateChristmasTree(n);
+
+
+
   return (
     <>
         <h1>Results:</h1>
@@ -151,6 +162,12 @@ function App() {
         <h2>{longerThanFive}</h2>
         <h2>{sumOfAll}</h2>
         <h3>{greaterThanTen ? 'At least one number is greater than 10' : 'No number is greater than 10'}</h3>
+
+
+
+        <h4>Here is a Christmas Tree for you!</h4>
+        {tree}
+
 
 
         <p>{JSON.stringify(livingHumans)}</p>
