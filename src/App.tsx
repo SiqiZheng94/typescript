@@ -1,15 +1,22 @@
 import './App.css'
 
 function App() {
- let age=18;
+ let age=10;
  let score=0;
  let username : string ="";
  let isAdmin=false;
  const n : number =5;
+ const numbers = [1,2,3,4,5,6,7,8,9,10,11];
+ const doupleNumbers=numbers.map(num=>num*2);
+ const words = ["a","ab","abc","abcd","abcde","abcdef","abcdefg"];
+ const longerThanFive=words.filter(word=>word.length>5);
+ const sumOfAll=numbers.reduce((accumulator,currentValue)=>{
+     return accumulator+currentValue;
+ },0);
+ const greaterThanTen=numbers.some(num=> num > 10);
 
  for(let i=1; i<=age; i++){
      console.log(i);
-     // printAge=i;
  }
 
  if(age<=18){
@@ -65,6 +72,11 @@ function App() {
  }
   return (
     <>
+        <h1>Results:</h1>
+        <h2>{doupleNumbers}</h2>
+        <h2>{longerThanFive}</h2>
+        <h2>{sumOfAll}</h2>
+        <h3>{greaterThanTen ? 'At least one number is greater than 10' : 'No number is greater than 10'}</h3>
 
     </>
   )
